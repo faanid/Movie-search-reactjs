@@ -51,7 +51,7 @@ small{
 }
 
 .button{
-    background-color: rbga(0,0,0,0.75);
+    background-color: rgba(0,0,0,0.75);
     color: white;
     padding: 1rem 2rem;
     border: 1px solid rgba(0,0,0,0.75);
