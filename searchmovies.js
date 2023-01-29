@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function SearchMovies() {
+  const [query, setQuery] = useState("");
+
+  const [movies, setMovies] = useState([]);
+
   const searchMovies = async (e) => {
     e.preventDefault();
-    console.log("submitting");
+    // console.log("submitting");
 
     const query = "Jurassic Park";
 
@@ -14,7 +18,8 @@ export default function SearchMovies() {
     try {
       const res = await fetch(url);
       const data = await res.json;
-      console.log(data);
+      console.log(data.results);
+      setMovies(data.results);
     } catch (err) {
       console.error(err);
     }
@@ -30,6 +35,7 @@ export default function SearchMovies() {
         type="text"
         name="query"
         placeholder="i.e. Jurassic Park"
+        onChange={(e) => setQuery(e.target.value)}
       />
       <button className="button" type="submit">
         Search
