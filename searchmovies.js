@@ -7,7 +7,7 @@ export default function SearchMovies() {
 
   const searchMovies = async (e) => {
     e.preventDefault();
-    console.log("submitting");
+    // console.log("submitting");
 
     const query = "Jurassic Park";
 
